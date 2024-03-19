@@ -1,0 +1,40 @@
+---
+import { Card } from "@/components/ui/card";
+import "../styles/globals.css";
+import {
+  Table,
+  TableCaption,
+  TableHeader,
+  TableRow,
+  TableHead,
+  TableBody,
+  TableCell,
+} from "@/components/ui/table";
+import { Header } from "@/components/Header";
+import { DataTable } from "@/components/DataTable";
+import { Navbar } from "@/components/Navbar";
+---
+
+<script is:inline src="src/js/darkMode.js"></script>
+
+<main class="flex flex-col h-screen">
+  <Header client:load />
+
+  <div class="flex h-full">
+    <div class="border-r w-1/5 h-full">
+      <Navbar
+        client:load
+        onChange={(e) => {
+          console.log(e);
+        }}
+      />
+    </div>
+    <div class="flex-1
+        w-4
+        5">
+      <Card className="m-4">
+        <DataTable client:load />
+      </Card>
+    </div>
+  </div>
+</main>

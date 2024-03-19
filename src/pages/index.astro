@@ -1,0 +1,33 @@
+---
+import "../styles/globals.css";
+import { Header } from "@/components/Header";
+import { CreateAccount } from "@/components/CreateAccount";
+import { Background } from "@/components/Background";
+---
+
+<script is:inline src="src/js/darkMode.js"></script>
+
+<main class="h-screen flex flex-col">
+  <div style="overflow-y: hidden;">
+    <Background client:load />
+  </div>
+
+  <!-- header -->
+  <Header client:load />
+
+  <!-- /header -->
+  <div class="flex flex-col md:flex-row h-full">
+    <!-- left -->
+    <div class="w-1/2 p-4 flex flex-col justify-center items-center">
+      <img src="/mickey.svg" width="200" alt="Mickey Mouse" />
+      <h1 class="text-3xl font-bold m-10">Welcome to MikyQuiz</h1>
+      <p class="text-gray-500">Your Keep it Simple Stupid quiz platform</p>
+    </div>
+    <!-- /left -->
+    <!-- right -->
+    <div class="w-1/2 p-4 flex flex-col justify-center">
+      <CreateAccount />
+    </div>
+    <!-- /right -->
+  </div>
+</main>
