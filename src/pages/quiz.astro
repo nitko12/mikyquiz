@@ -1,0 +1,17 @@
+---
+import "../styles/globals.css";
+import { Header } from "@/components/Header";
+import Quiz from "@/components/Quiz";
+import { Background } from "@/components/Background";
+---
+<script is:inline src="src/js/darkMode.js"></script>
+
+<main class="flex flex-col h-screen">
+    <div style="overflow-y: hidden;">
+        <Background client:load />
+      </div>
+    <Header client:load />
+    <div class="p-4 flex flex-col justify-center mx-auto">
+        <Quiz client:load />
+    </div>
+</main>@/components/Quiz

@@ -3,9 +3,11 @@ import "../styles/globals.css";
 import { Header } from "@/components/Header";
 import { CreateAccount } from "@/components/CreateAccount";
 import { Background } from "@/components/Background";
+import {EnterQuiz} from "@/components/EnterQuiz";
 ---
 
 <script is:inline src="src/js/darkMode.js"></script>
+<script is:inline src="src/js/textSwitch.js"></script>
 
 <main class="h-screen flex flex-col">
   <div style="overflow-y: hidden;">
@@ -21,12 +23,13 @@ import { Background } from "@/components/Background";
     <div class="w-1/2 p-4 flex flex-col justify-center items-center">
       <img src="/mickey.svg" width="200" alt="Mickey Mouse" />
       <h1 class="text-3xl font-bold m-10">Welcome to MikyQuiz</h1>
-      <p class="text-gray-500">Your Keep it Simple Stupid quiz platform</p>
+      <p id="changableText" class="text-gray-500"></p>
     </div>
     <!-- /left -->
     <!-- right -->
     <div class="w-1/2 p-4 flex flex-col justify-center">
-      <CreateAccount />
+      <!-- <CreateAccount /> -->
+      <EnterQuiz client:load/>
     </div>
     <!-- /right -->
   </div>
