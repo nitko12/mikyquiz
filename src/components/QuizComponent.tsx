@@ -9,41 +9,22 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-const Quiz = () => {
+const QuizComponent = () => {
   const confettiOptions = {
     force: 0.9,
     duration: 6000,
     particleCount: 100,
     width: 800,
   };
+  const [jmbag, setJmbag] = useState("");
   const [question, setQuestion] = useState(1);
   const [answers, setAnswers] = useState<
     { question: number; answer: boolean }[]
   >([]);
   const [quizdone, setQuizdone] = useState(false);
   const [score, setScore] = useState(0);
-  const [quizData, setQuizData] = useState<any>([
-    {
-      text: "What is openAI 1 ?",
-      options: ["Opt 1", "Opt 2", "Opt 3", "Opt 4"],
-      answer: "Opt 2",
-    },
-    {
-      text: "What is openAI 2 ?",
-      options: ["Opt 1", "Opt 2", "Opt 3", "Opt 4"],
-      answer: "Opt 3",
-    },
-    {
-      text: "What is openAI 3 ?",
-      options: ["Opt 1", "Opt 2", "Opt 3", "Opt 4"],
-      answer: "Opt 4",
-    },
-    {
-      text: "What is openAI 4 ?",
-      options: ["Opt 1", "Opt 2", "Opt 3", "Opt 4"],
-      answer: "Opt 1",
-    },
-  ]);
+  const [quizData, setQuizData] = useState<any>([]);
+  const [endCorrect, setEndCorrect] = useState(false);
 
   const saveAnswer = (e: boolean, q: number) => {
     let newAnswers: { question: number; answer: boolean }[] = [...answers];
@@ -59,18 +40,44 @@ const Quiz = () => {
       setQuestion(question + 1);
     }
     if (question === quizData.length) {
+      console.log(question);
       setQuizdone(true);
     }
-    console.log(answers);
   };
+
+  useEffect(() => {
+    if (quizdone) {
+      sendResults();
+    }
+  }, [quizdone]);
+
+  function sendResults() {
+    console.log(score);
+    axios
+      .post("http://localhost:8000/end", {
+        jmbag: localStorage.getItem("jmbag"),
+        correct: score,
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 
   const goHome = () => {
     window.location.href = "/";
   }
 
   useEffect(() => {
+    setJmbag(localStorage.getItem("jmbag") || "");
+    if (localStorage.getItem("jmbag") === null) {
+      alert("Treba jmbag!");
+      window.location.href = "/";
+    }
     axios
-      .get("http://localhost:3000/quiz/questions")
+      .get("http://localhost:8000/quiz")
       .then((res) => {
         setQuizData(res.data);
       })
@@ -79,8 +86,9 @@ const Quiz = () => {
       });
   }, []);
 
-  return (
+  return quizData.length != 0 ? (
     <Card>
+      {quizData.map}
       <CardHeader>
         {!quizdone && (
           <div>
@@ -100,17 +108,17 @@ const Quiz = () => {
             quizData.map(
               (
                 x: {
+                  answers: any;
+                  question: string;
+                  correct: string;
                   answer: string;
                   text:
                     | string
                     | number
                     | boolean
-                    | React.ReactElement<
-                        any,
-                        string | React.JSXElementConstructor<any>
-                      >
-                    | React.ReactPortal
+                    | React.ReactElement<any, string | React.JSXElementConstructor<any>>
                     | Iterable<React.ReactNode>
+                    | React.ReactPortal
                     | null
                     | undefined;
                   options: any[];
@@ -144,7 +152,9 @@ const Quiz = () => {
         </div>
       </CardContent>
     </Card>
+  ) : (
+    <div>Loading...</div>
   );
 };
 
-export default Quiz;
+export default QuizComponent;

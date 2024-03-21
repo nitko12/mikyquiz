@@ -1,0 +1,75 @@
+[{
+    "question": "Što je base64",
+    "answers": ["Način enkodiranja binarnih podataka u text", "Način enkodiranja isključivo ASCII znamenki", "Prikaz ASCII znamenki", "Prikaz znamenki u heksadekadskom sustavu"],
+    "correct": "Način enkodiranja binarnih podataka u text"
+},
+{
+    "question": "Base64 može se enkodirati u samog sebe",
+    "answers": ["Da", "Ne"],
+    "correct": "Da"
+},
+{
+    "question": "Netcat je alat za:",
+    "answers": ["pretraživanje stringa u tekstualnom izlazu", "čitanje i pisanje preko internetske mreže", "ispis stringova iz datoteke", "hex editor"],
+    "correct": "čitanje i pisanje preko internetske mreže"
+},
+{
+    "question": "Što je OSINT?",
+    "answers": ["Korištenje alata za obradu slika", "Sakupljanje open source koda", "Sakupljanje i analiza podataka iz javno dostupnih resursa"],
+    "correct": "Sakupljanje i analiza podataka iz javno dostupnih resursa"
+},
+{
+    "question": "Strings je alat za:",
+    "answers": ["ispis brojeva iz datoteke", "ispis 'ispisivih' znakova iz datoteke", "pretraživanje stringa u tekstualnom izlazu", "provjeru slika"],
+    "correct": "ispis 'ispisivih' znakova iz datoteke"
+},
+{
+    "question": "File signature je:",
+    "answers": ["potpis autora datoteke", "podatak koji indentificira tip datoteke", "licenca datoteke", "isto kao i ekstenzija datoteke"],
+    "correct": "podatak koji indentificira tip datoteke"
+},
+{
+    "question": "Što je Exif?",
+    "answers": ["Dodatni metapodaci za slike", "Dio strukture zip arhive", "Obvezni podaci PDF-a", "Dio strukture .exe datoteke"],
+    "correct": "Dodatni metapodaci za slike"
+},
+{
+    "question": "JPEG koristi RGB?",
+    "answers": ["Da", "Ne"],
+    "correct": "Ne"
+},
+{
+    "question": "Tko kompresira pomoću DEFLATE algoritma?",
+    "answers": ["JPEG", "PNG"],
+    "correct": "PNG"
+},
+{
+    "question": "PNG je lossless format?",
+    "answers": ["Da", "Ne"],
+    "correct": "Da"
+},
+{
+    "question": "Obvezni chunk u PNG formatu je:",
+    "answers": ["eXIf", "tEXt", "iTXt", "IHDR"],
+    "correct": "IHDR"
+},
+{
+    "question": "Entropija podataka je:",
+    "answers": ["mjera različitosti susjednih bajtova unutar datoteke", "mjera korupcije datoteke", "mjera veličine datoteke"],
+    "correct": "mjera različitosti susjednih bajtova unutar datoteke"
+},
+{
+    "question": "Spektrogram je:",
+    "answers": ["prikaz slika bez određenih kanala", "vizualni prikaz spektra frekvencija signala koji se mijenja s vremenom", "modifikacija LSB slike", "enkodiranje slike u zvuk"],
+    "correct": "vizualni prikaz spektra frekvencija signala koji se mijenja s vremenom"
+},
+{
+    "question": "Zip arhiva sadrži centralni direktorij",
+    "answers": ["Ne", "Da"],
+    "correct": "Da"
+},
+{
+    "question": "PCAP je format za:",
+    "answers": ["slike", "zvuk", "sniffanje mreže", "video"],
+    "correct": "sniffanje mreže"
+}]

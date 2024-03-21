@@ -29,16 +29,8 @@ export function EnterQuiz() {
     }
 
     function handleEnter() {
-        axios.post("http://localhost:3000/quiz/enter", {
-            jmbag: jmbag,
-            quizCode: quizCode
-        }).then((res) => {
-            if(res.status === 200) {
-                window.location.href = "/quiz";
-            }
-        }).catch((err) => {
-            alert("Nesto je krepalo");
-        });
+        localStorage.setItem("jmbag", jmbag);
+        window.location.href = `/quiz`;
     }
 
     return (
@@ -57,13 +49,13 @@ export function EnterQuiz() {
                 </span>
               </div>
             </div>
-            <div className="grid gap-2">
+            {/* <div className="grid gap-2">
               <Label htmlFor="email">JMBAG</Label>
               <Input id="email" type="email" placeholder="00365xxxxx" onChange={handleJmbagChange} />
-            </div>
+            </div> */}
             <div className="grid gap-2">
-              <Label htmlFor="password">Quiz code</Label>
-              <Input id="password" onChange={handleQuizCodeChange} />
+              <Label htmlFor="password">JMBAG</Label>
+              <Input id="password" onChange={handleJmbagChange} />
             </div>
           </CardContent>
           <CardContent>
