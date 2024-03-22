@@ -31,7 +31,7 @@ class CorrectAnswer(BaseModel):
     jmbag: str
     correct: int
 
-@app.get("/quiz")
+@app.get("/quizquestions")
 async def root():
     random_questions = []
     with open(os.path.join(dir, "pitanja.json")) as f:

@@ -54,7 +54,7 @@ const QuizComponent = () => {
   function sendResults() {
     console.log(score);
     axios
-      .post("http://localhost:8000/end", {
+      .post("http://157.230.31.248:8000/end", {
         jmbag: localStorage.getItem("jmbag"),
         correct: score,
       })
@@ -77,7 +77,7 @@ const QuizComponent = () => {
       window.location.href = "/";
     }
     axios
-      .get("http://localhost:8000/quiz")
+      .get("http://157.230.31.248:8000/quizquestions")
       .then((res) => {
         setQuizData(res.data);
       })
