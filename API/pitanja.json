@@ -47,4 +47,30 @@
     "question": "Diffie-Hellman je primjer asimetrične kriptografije:",
     "answers": ["Da", "Ne"],
     "correct": "Da"
-}]
+},
+{
+    "question": "5 xor 7 je?",
+    "answers": ["1", "2", "3", "4"],
+    "correct": "2"
+},
+{
+    "question": "Kako desifriramo rot13?",
+    "answers": ["ponovimo rot 13", "analizom frekvencije", "xor-amo ga s kljucem", "koristimo hash ulaznog teksta"],
+    "correct": "ponovimo rot 13"
+},
+{
+    "question": "Python koristi koji prng",
+    "answers": ["lcg", "mt19937", "ggez", "xorturboshifer"],
+    "correct": "mt19937"
+},
+{
+    "question": "Dokazatelj teorema napravljen od firme microsoft, koji nam moze pomoci u rjesavanju zadataka zove se?",
+    "answers": ["z3", "rx8", "z1", "f40"],
+    "correct": "z3"
+},
+{
+    "question": "Koje od sljedecih je napan na rsa?",
+    "answers": ["thorn's attack", "mending's attack", "hastad's attack", "lure's attack"],
+    "correct": "hastad's attack"
+}
+]
