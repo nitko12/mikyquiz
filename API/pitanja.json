@@ -1,76 +1,56 @@
 [{
-    "question": "Koja se od navedenih hashing funkcija smatra sigurnom?",
-    "answers": ["SHA-1", "MD5", "SHA-256", "CRC64"],
-    "correct": "SHA-256"
+    "question": "HTTP GET metoda se UGLAVNOM koristi za",
+    "answers": ["izmjenu podataka", "brisanje podataka", "dohvaćanje podataka"],
+    "correct": "dohvaćanje podataka"
 },
 {
-    "question": "Koji se alat može koristiti za probijanje MD5 hashanih lozinki?",
-    "answers": ["Johntheripper", "RsaCtfTool", "CyberChef", "Z3"],
-    "correct": "Johntheripper"
+    "question": "HTTP Referer zaglavlje sadrži informaciju o",
+    "answers": ["Korisnikovom pregledniku", "S koje stranice je korisnik došao", "Koliko dugo korisnikova sjednica traje"],
+    "correct": "S koje stranice je korisnik došao"
 },
 {
-    "question": "Koji je primjer simetrične kriptografske funkcije?",
-    "answers": ["DES", "RSA", "MD5", "ECC"],
-    "correct": "DES"
+    "question": "Kako bi web aplikacije mogle identificirati korisnika nakon prijave bez da ga pitaju za lozinku pri svakom zahtjevu koristi se:",
+    "answers": ["Http autentifikacijski kolačići", "CSRF tokeni", "HTTP TRACE metoda"],
+    "correct": "Http autentifikacijski kolačići"
 },
 {
-    "question": "Koja datoteka na Linux sustavu služi kao siguran izvor entropije?",
-    "answers": ["/dev/zram0", "/dev/random", "/proc/sys/kernel/random/entropy_avail", "/sys/class/mem/random"],
-    "correct": "/dev/random"
+    "question": "Burp Suite proxy tab koristimo kako bi",
+    "answers": ["Naša IP adresa ostala skrivena, da web aplikacija ne može detektirati naš napad", "Presretali i/ili mijenjali HTTP zahtjeve", "Bruteforceali SSH lozinke"],
+    "correct": "Presretali i/ili mijenjali HTTP zahtjeve"
 },
 {
-    "question": "Je li C funckija rand() kriptografski sigurna?",
-    "answers": ["Da", "Ne"],
-    "correct": "Ne"
+    "question": "Znate da web aplikacija koristi SQL upit: SELECT * FROM students where jmbag = '<jmbag>' te da se ne koriste parametrizirani upiti, te da se vrijednost parametra jmbag nikako ne sanitizira prije ubacivanja u upit. Na što ćete postaviti vrijednost parametra jmbag da dobijete cijelu tablicu students.",
+    "answers": ["' or 1=1 -- ", "' or 1=2 --", "' or 1=1 --"],
+    "correct": "' or 1=1 --"
 },
 {
-    "question": "PGP je najčešće korišten za zaštitu:",
-    "answers": ["SMS poruka", ".mp3 datoteka", "e-maila", "mrežnog prometa"],
-    "correct": "e-maila"
+    "question": "Kad radimo UNION based SQL injection moramo pripaziti da",
+    "answers": ["lijeva strana UNIONA ima isti broj stupaca kao i desna", "lijeva strana ima parni broj stupaca, a desna neparni", "lijeva strana UNIONA nema nijedan stupac, a desna bar 3"],
+    "correct": "lijeva strana UNIONA ima isti broj stupaca kao i desna"
 },
 {
-    "question": "CRC se može koristiti za:",
-    "answers": ["Provjeru autentičnosti poruke", "Sigurno spremanje lozinki", "Sigurnu komunikaciju putem nesigurnog kanala", "Detekciju grešaka"],
-    "correct": "Detekciju grešaka"
+    "question": "U logovima Vašeg web servera primjetili ste zahtjev koji izgleda ovako: GET /read.php?f=../../../../../etc/passwd Koju ranjivost je napadač pokušao iskoristiti?",
+    "answers": ["XSS", "SQL injection", "File upload ranjivost", "Directory traversal"],
+    "correct": "Directory traversal"
 },
 {
-    "question": "Supstitucijska šifra je sigurna zbog velikog broja mogućih ključeva (~2^88 mogućnosti)",
-    "answers": ["Da", "Ne"],
-    "correct": "Ne"
+    "question": "Od navedenih, najispravna zaštita od file upload ranjivosti u PHP web aplikaciji za upload slika bila bi",
+    "answers": ["Blokirati sve osim jpg i png ekstenzija na klijentskoj strani pomocu javascripta", "Na backendu zabraniti upload datoteka s '.php' ekstenzijom", "Na backendu dozvoliti upload isključivo datoteka s '.jpg' i '.png' ekstenzijom"],
+    "correct": "Na backendu dozvoliti upload isključivo datoteka s '.jpg' i '.png' ekstenzijom"
 },
 {
-    "question": "ChaCha20 je primjer:",
-    "answers": ["blok šifre", "protočne šifre", "asimetrične šifre", "kvantno-otporne šifre"],
-    "correct": "protočne šifre"
+    "question": "Zastavica HTTPOnly kod cookieja znači da",
+    "answers": ["Cookie će se slati samo preko nešifriranih veza", "Javascript kod ne može pročitati cookie", "Cookie se briše kada se preglednik zatvori"],
+    "correct": "Javascript kod ne može pročitati cookie"
 },
 {
-    "question": "Diffie-Hellman je primjer asimetrične kriptografije:",
-    "answers": ["Da", "Ne"],
-    "correct": "Da"
+    "question": "Koji od navedenih scenarija opisuje reflektirani XSS napad",
+    "answers": ["Napadač žrtvi pošalje poveznicu, u samoj poveznici se nalazi maliciozni Javascript kod. Kad žrtva klikne poveznicu kod se izvrši", "Napadač ostavi komentar na stranici koji sadrži maliciozni Javascript kod, Javascript kod se izvrši kod svih žrtva koje posjete stranicu s komentarima", "Napadač uploada XML datoteku i zbog nesigurno konfiguriranog parsera uspjeva pročitati datoteku /etc/passwd"],
+    "correct": "Napadač žrtvi pošalje poveznicu, u samoj poveznici se nalazi maliciozni Javascript kod. Kad žrtva klikne poveznicu kod se izvrši"
 },
 {
-    "question": "5 xor 7 je?",
-    "answers": ["1", "2", "3", "4"],
-    "correct": "2"
-},
-{
-    "question": "Kako desifriramo rot13?",
-    "answers": ["ponovimo rot 13", "analizom frekvencije", "xor-amo ga s kljucem", "koristimo hash ulaznog teksta"],
-    "correct": "ponovimo rot 13"
-},
-{
-    "question": "Python koristi koji prng",
-    "answers": ["lcg", "mt19937", "ggez", "xorturboshifer"],
-    "correct": "mt19937"
-},
-{
-    "question": "Dokazatelj teorema napravljen od firme microsoft, koji nam moze pomoci u rjesavanju zadataka zove se?",
-    "answers": ["z3", "rx8", "z1", "f40"],
-    "correct": "z3"
-},
-{
-    "question": "Koje od sljedecih je napan na rsa?",
-    "answers": ["thorn's attack", "mending's attack", "hastad's attack", "lure's attack"],
-    "correct": "hastad's attack"
+    "question": "CSRF je",
+    "answers": ["Napad u kojem se ranjivi poslužitelj isprovocira da napravi zahtjev prema nekom internom servisu", "Napad pri kojem se preglednik žrtve namami da pošalje naredbu ranjivoj web aplikaciji", "Napad u kojem web aplikacija deserijalizira vrijednost koju joj napadač da, što dovodi do izvršavanja malicioznog koda na serveru"],
+    "correct": "Napad pri kojem se preglednik žrtve namami da pošalje naredbu ranjivoj web aplikaciji"
 }
 ]
