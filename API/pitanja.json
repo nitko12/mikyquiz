@@ -20,7 +20,7 @@
 },
 {
     "question": "Znate da web aplikacija koristi SQL upit: SELECT * FROM students where jmbag = '<jmbag>' te da se ne koriste parametrizirani upiti, te da se vrijednost parametra jmbag nikako ne sanitizira prije ubacivanja u upit. Na što ćete postaviti vrijednost parametra jmbag da dobijete cijelu tablicu students.",
-    "answers": ["' or 1=1 -- ", "' or 1=2 --", "' or 1=1 --"],
+    "answers": ["' or 1=1 --", "' or 1=2 --", "' or 1=1 --"],
     "correct": "' or 1=1 --"
 },
 {
