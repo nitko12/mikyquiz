@@ -1,56 +1,101 @@
 [{
-    "question": "HTTP GET metoda se UGLAVNOM koristi za",
-    "answers": ["izmjenu podataka", "brisanje podataka", "dohvaćanje podataka"],
-    "correct": "dohvaćanje podataka"
+    "question": "Stack frame definiraju koja dva registra:",
+    "answers": ["rsp i rip", "rsp i rbp", "rax i rbx", "rbx i rbp"],
+    "correct": "rsp i rbp"
 },
 {
-    "question": "HTTP Referer zaglavlje sadrži informaciju o",
-    "answers": ["Korisnikovom pregledniku", "S koje stranice je korisnik došao", "Koliko dugo korisnikova sjednica traje"],
-    "correct": "S koje stranice je korisnik došao"
+    "question": "Koja zaštita učitava libc na nasumičnu adresu u procesu:",
+    "answers": ["NX", "DEP", "ASLR", "Stack Canary"],
+    "correct": "ASLR"
 },
 {
-    "question": "Kako bi web aplikacije mogle identificirati korisnika nakon prijave bez da ga pitaju za lozinku pri svakom zahtjevu koristi se:",
-    "answers": ["Http autentifikacijski kolačići", "CSRF tokeni", "HTTP TRACE metoda"],
-    "correct": "Http autentifikacijski kolačići"
+    "question": "Koju zaštitu zaobilazimo tehnikom Return Oriented Programming (ROP):",
+    "answers": ["NX/DEP", "ASLR", "Stack Canarye", "PointerGuard"],
+    "correct": "NX/DEP"
 },
 {
-    "question": "Burp Suite proxy tab koristimo kako bi",
-    "answers": ["Naša IP adresa ostala skrivena, da web aplikacija ne može detektirati naš napad", "Presretali i/ili mijenjali HTTP zahtjeve", "Bruteforceali SSH lozinke"],
-    "correct": "Presretali i/ili mijenjali HTTP zahtjeve"
+    "question": "Koju funkciju koristimo kako bismo stvorili shell iz exploita:",
+    "answers": ["execute", "shell", "system", "main"],
+    "correct": "system"
 },
 {
-    "question": "Znate da web aplikacija koristi SQL upit: SELECT * FROM students where jmbag = '<jmbag>' te da se ne koriste parametrizirani upiti, te da se vrijednost parametra jmbag nikako ne sanitizira prije ubacivanja u upit. Na što ćete postaviti vrijednost parametra jmbag da dobijete cijelu tablicu students.",
-    "answers": ["' or 1=1 --", "' or 1=2 --", "' or 1=1 --"],
-    "correct": "' or 1=1 --"
+    "question": "U 64 bitnom sustavu gdje se, na stogu, nalazi povratna adresa iz funkcije u odnosu na base pointer:",
+    "answers": ["rbp+16", "rbp+8", "rbp-16", "rbp-8"],
+    "correct": "rbp-8"
 },
 {
-    "question": "Kad radimo UNION based SQL injection moramo pripaziti da",
-    "answers": ["lijeva strana UNIONA ima isti broj stupaca kao i desna", "lijeva strana ima parni broj stupaca, a desna neparni", "lijeva strana UNIONA nema nijedan stupac, a desna bar 3"],
-    "correct": "lijeva strana UNIONA ima isti broj stupaca kao i desna"
+    "question": "U 32 bitnom sustavu ASLR je neefektivan zbog pre malog broja bitova za randomizaciju:",
+    "answers": ["točno", "netočno"],
+    "correct": "točno"
 },
 {
-    "question": "U logovima Vašeg web servera primjetili ste zahtjev koji izgleda ovako: GET /read.php?f=../../../../../etc/passwd Koju ranjivost je napadač pokušao iskoristiti?",
-    "answers": ["XSS", "SQL injection", "File upload ranjivost", "Directory traversal"],
-    "correct": "Directory traversal"
+    "question": "Koju python biblioteku koristimo za izradu exploitova za linux:",
+    "answers": ["exploitr", "pwntools", "linpwn", "pwnelf"],
+    "correct": "pwntools"
 },
 {
-    "question": "Od navedenih, najispravna zaštita od file upload ranjivosti u PHP web aplikaciji za upload slika bila bi",
-    "answers": ["Blokirati sve osim jpg i png ekstenzija na klijentskoj strani pomocu javascripta", "Na backendu zabraniti upload datoteka s '.php' ekstenzijom", "Na backendu dozvoliti upload isključivo datoteka s '.jpg' i '.png' ekstenzijom"],
-    "correct": "Na backendu dozvoliti upload isključivo datoteka s '.jpg' i '.png' ekstenzijom"
+    "question": "U intel x86 arhitekturi svaka funkcija kreće:",
+    "answers": ["funkcijskim prologom", "spremanjem konteksta", "alociranjem heap memorije", "nema specifičnog početka"],
+    "correct": "funkcijskim prologom"
 },
 {
-    "question": "Zastavica HTTPOnly kod cookieja znači da",
-    "answers": ["Cookie će se slati samo preko nešifriranih veza", "Javascript kod ne može pročitati cookie", "Cookie se briše kada se preglednik zatvori"],
-    "correct": "Javascript kod ne može pročitati cookie"
+    "question": "U 64 bitnim linux sustavima prvi argument se šalje kroz koji registar:",
+    "answers": ["rax", "rbp", "rdi", "rsi"],
+    "correct": "rdi"
 },
 {
-    "question": "Koji od navedenih scenarija opisuje reflektirani XSS napad",
-    "answers": ["Napadač žrtvi pošalje poveznicu, u samoj poveznici se nalazi maliciozni Javascript kod. Kad žrtva klikne poveznicu kod se izvrši", "Napadač ostavi komentar na stranici koji sadrži maliciozni Javascript kod, Javascript kod se izvrši kod svih žrtva koje posjete stranicu s komentarima", "Napadač uploada XML datoteku i zbog nesigurno konfiguriranog parsera uspjeva pročitati datoteku /etc/passwd"],
-    "correct": "Napadač žrtvi pošalje poveznicu, u samoj poveznici se nalazi maliciozni Javascript kod. Kad žrtva klikne poveznicu kod se izvrši"
+    "question": "Kako nazivamo binarne datoteke koje unutar sebe, tijekom kompajliranja, ugrade libc:",
+    "answers": ["elf datoteke", "statički linkane datoteke", "dinamički linkane datoteke", "so datoteke"],
+    "correct": "statički linkane datoteke"
 },
 {
-    "question": "CSRF je",
-    "answers": ["Napad u kojem se ranjivi poslužitelj isprovocira da napravi zahtjev prema nekom internom servisu", "Napad pri kojem se preglednik žrtve namami da pošalje naredbu ranjivoj web aplikaciji", "Napad u kojem web aplikacija deserijalizira vrijednost koju joj napadač da, što dovodi do izvršavanja malicioznog koda na serveru"],
-    "correct": "Napad pri kojem se preglednik žrtve namami da pošalje naredbu ranjivoj web aplikaciji"
+    "question": "Za dekompilaciju .NET programa se koristi:",
+    "answers": ["ILSpy", "Recaf", "AnyRun", "Cutter"],
+    "correct": "ILSpy"
+},
+{
+    "question": "Kod statičke analize programa pratimo mrežni promet:",
+    "answers": ["Da", "Ne"],
+    "correct": "Ne"
+},
+{
+    "question": "Odaberi alat koji radi samo na Windowsima / napravljen je za Windowse:",
+    "answers": ["strace", "gdb", "scdbg", "apktool"],
+    "correct": "scdbg"
+},
+{
+    "question": "Odaberi deobfuscator:",
+    "answers": ["Detect it Easy", "Cutter", "Ghidra", "de4dot"],
+    "correct": "de4dot"
+},
+{
+    "question": "Za analizu docx/xlsx macroa se koristi:",
+    "answers": ["Recaf", "oletools", "de4dot", "scdbg"],
+    "correct": "oletools"
+},
+{
+    "question": "Koji alat možete koristiti za symbolic execution?",
+    "answers": ["Ghidra", "IDA Pro", "tria.ge", "Angr"],
+    "correct": "Angr"
+},
+{
+    "question": "Koji se alat koristi u browseru (web stranica je):",
+    "answers": ["Hybrid Analysis", "Recaf", "pwndbg", "Decompyle++"],
+    "correct": "Hybrid Analysis"
+},
+{
+    "question": "Debugger spada pod dinamičku analizu:",
+    "answers": ["Da", "Ne"],
+    "correct": "Da"
+},
+{
+    "question": "Koja će se arhitektura najvjerovatnije nalaziti na (modernom) osobnom računalu?",
+    "answers": ["x86_64", "MIPS", "PowerPC", "RISC-V"],
+    "correct": "x86_64"
+},
+{
+    "question": "S kojom assembly naredbom možemo spremiti varijablu u registar?",
+    "answers": ["pop", "push", "jnz", "ret"],
+    "correct": "pop"
 }
 ]
